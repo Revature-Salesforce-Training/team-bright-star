@@ -1,0 +1,5 @@
+PO (Project 0)
+Define structural and set architeture layout 
+HTML,CSS, JS  working in basics of the Application
+Application theme and definion ShowDog App, An Fetch ApI design into users
+...The users will be able to consult and make use of services(adoption,showroom,and etc)
