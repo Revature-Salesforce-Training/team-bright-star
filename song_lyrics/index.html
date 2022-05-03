@@ -1,0 +1,43 @@
+<!--
+    Author: Noah Johnson
+    Created: 27 April 2022
+    Last Updated: 27 April 2022 15:48 EST
+    Description: song lyrics api project
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>P0</title>
+        <meta name="description" content="Project 0 | Get Lyrics">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" text="text/css" href="styles.css">
+        <script type="module" src="index.js" defer></script>
+    </head>
+    <body>
+        <div id="splash">
+            <h1> Salesforce Project 0</h1>
+        </div>
+
+        <header>
+            <img id="logo" src="https://cdn.iconscout.com/icon/free/png-256/music-1128-1131524.png" alt="logo"></svg>
+            <h1 id="header">Get Your Favourite Song Lyrics</h1><hr>
+        </header>
+
+        <div id="container">
+            <label> Enter Artist Name: </label>
+            <input id="artist" class="searchBox" type="text"/><br>
+            <label> Enter Song Name: </label>
+            <input id="song" class="searchBox" type="text"/>
+            <button id="submit">Search Lyrics</button><br>
+            <!-- <a target="_blank" href="#" id="click">Click To See Upcoming Events!</a> -->
+            <hr/>
+           
+            <div id="lyrics-container">
+                <h3 id="title"></h3><br>
+                <p id="lyrics"></p>
+            </div>
+        </div>
+    </body>
+</html>
