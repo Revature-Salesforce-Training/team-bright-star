@@ -10,28 +10,37 @@
         <title>Project 0</title>
         <meta name="description" content="salesforce project 0">
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, intial-scale=1.0">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" text="text/css" href="project0.css">
-        <script src="project0.js"></script>
+        <script type="module" src="project0.js"></script>
     </head>
     <body>
+        <header>
+            <!-- <img id="logo" src="https://animeandgameembroidery.com/wp-content/uploads/2020/07/berserk-brand-sacrifice.jpg" alt="logo"></svg> -->
+            <nav>
+                <a class="nav-item" href="project0.html">Home</a>
+            </nav>
+        </header>
+
+
+        <div>
+            <label>Enter Your City: </ label>
+            <input id="user-city" type="text" name="city-search" placeholder="e.g. New York"/>
+            <button id="submit" type="button">Submit</button>
+        </div>
         <div id="weather-page">
-            <div id="header">
-                <h1>Weather</h1>
-            </div>
-            <div id="weather-card">
-                <p>
-                    <div>Baltimore</div><br>
-                    <div>55</div><br>
-                    <div>Partly Cloudy</div><br>
-                    <div>H: 55</div>
-                    <div>L: 40</div><br>
-                </p>
-
-
+            <div id="container">
+                <div id="weather-card">
+                    <p id="weather-info">
+                        <div class="weather-info" id="city">Baltimore</div><br>
+                        <div class="weather-info" id="temp">55</div><br>
+                        <div class="weather-info" id="forecast">Partly Cloudy</div><br>
+                        <div class="weather-info" id="temp-high">H: 55</div>
+                        <div class="weather-info" id="temp-low">L: 40</div>
+                    </p>
+                </div>
             </div>
         </div>
-       
+
     </body>
 </html>
