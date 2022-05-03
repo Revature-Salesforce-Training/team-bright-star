@@ -1,21 +1,38 @@
 // import fetch from 'node-fetch';
 // fetch = require('node-fetch');
 
-const key = '38d93e0f7356841b542bc93a03eaed71';
-const url = 'http://api.weatherstack.com/current?access_key=38d93e0f7356841b542bc93a03eaed71&query=${city}';
-let city;
+const KEY = '38d93e0f7356841b542bc93a03eaed71';
+let url = 'http://api.weatherstack.com/current?access_key=38d93e0f7356841b542bc93a03eaed71&query=${city}';
 
-async function getCityName() {
-    let submit = document.querySelector('#submit');
-    submit.addEventListener('click', () => {
+// my way
+function getCityName() {
+    document.querySelector('#submit').addEventListener('click', () => {
         let city = document.querySelector('#user-city').value;
         console.log(city);
-        return city;
+  
+        fetch(`http://api.weatherstack.com/current?access_key=${KEY}&query=${city}`)
+        .then((res) => {
+            return res.json()
+        })
+        .then((data) => {
+            console.log(data);
+        })
+        .catch(error => console.log(error));
     });
 }
 
-async function getWeather(city) {
-    /* 
+// ethan method
+document.querySelector('#submit').addEventListener('click', getCity);
+
+async function getCity() {
+    let city = document.querySelector('#user-city').value;
+
+    fetch(`http://api.weatherstack.com/current?access_key=${KEY}&query=${city}`)
+    .then((res) => {
+        return res.json()
+    })
+    .then((data) => {
+        let weatherInfo = new Array();
         let city = data.location.name;
         let region = data.location.region;
         let localtime = data.location.localtime;
@@ -23,26 +40,11 @@ async function getWeather(city) {
         let precip = data.current.precip;
         let humidity = data.current.humidity;
         let weather = data.current.weather_descriptions;
-    */
 
-    await fetch(url)
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(error => console.log(error));
-
-    // try {
-    //     let res = await fetch('http://api.weatherstack.com/current?access_key=${key}&query=${city}');
-    //     let data = await res.json();
-    //     console.log(data);
-    // } catch (error) {
-    //     console.log(error);
-    // }
+        console.log(data);
+    })
+    .catch(error => console.log(error));
 }
-
-getWeather(getCityName());
-
-
-
 
 
 /*
